@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:healtheats/core/utils/constants.dart';
 import 'package:healtheats/presentation/providers/food_provider.dart';
 import 'package:healtheats/presentation/providers/user_provider.dart';
-import 'package:healtheats/presentation/widgets/appbar_home.dart';
-import 'package:healtheats/presentation/widgets/check_disease_box.dart';
+import 'package:healtheats/presentation/widgets/appbar/appbar_home.dart';
+import 'package:healtheats/presentation/widgets/box/check_disease_box.dart';
 import 'package:healtheats/presentation/widgets/home_item_category.dart';
 import 'package:provider/provider.dart';
 
@@ -15,8 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var foods = Foods.allFood;
-
   @override
   void initState() {
     super.initState();
@@ -31,6 +28,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final foodMWC = Provider.of<FoodProvider>(context).foodMWC;
     final foodMD = Provider.of<FoodProvider>(context).foodMD;
+    final isLoading = Provider.of<FoodProvider>(context).isLoading;
     return Scaffold(
       appBar: const AppbarHome(),
       body: SingleChildScrollView(
@@ -48,14 +46,16 @@ class _HomePageState extends State<HomePage> {
             ),
             HomeItemCategory(
               title: 'Menu Wajib Coba',
-              foods: foods,
+              foods: foodMWC,
+              isLoading: isLoading,
             ),
             const SizedBox(
               height: 10,
             ),
             HomeItemCategory(
               title: 'Mudah Dibuat',
-              foods: foods,
+              foods: foodMD,
+              isLoading: isLoading,
             ),
           ],
         ),
