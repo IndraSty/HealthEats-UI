@@ -9,16 +9,16 @@ class FoodProvider with ChangeNotifier {
   bool get isLoading => _isLoading;
 
   List<FoodModel>? _foodMWC;
-  List<FoodModel> get foodMWC => _foodMWC!;
+  List<FoodModel>? get foodMWC => _foodMWC;
 
   List<FoodModel>? _foodMD;
-  List<FoodModel> get foodMD => _foodMD!;
+  List<FoodModel>? get foodMD => _foodMD;
 
   List<FoodModel>? _allFood;
-  List<FoodModel> get allFood => _allFood!;
+  List<FoodModel>? get allFood => _allFood;
 
   FoodModel? _food;
-  FoodModel get food => _food!;
+  FoodModel? get food => _food;
 
   String? _errorMessage;
   String? get errorMessage => _errorMessage;
@@ -59,12 +59,12 @@ class FoodProvider with ChangeNotifier {
     }
   }
 
-  Future<void> getDetailFood(int id) async {
+  Future<void> getDetailFood(int? id) async {
     _isLoading = true;
     notifyListeners();
 
     try {
-      final response = await foodUsecase.getDetailFood(id);
+      final response = await foodUsecase.getDetailFood(id!);
       _food = response;
       _errorMessage = null;
       notifyListeners();
