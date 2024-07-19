@@ -5,7 +5,7 @@ import 'package:healtheats/presentation/providers/auth_provider.dart';
 import 'package:healtheats/presentation/widgets/fixed_bottom_text.dart';
 import 'package:healtheats/presentation/widgets/password_field_container.dart';
 import 'package:healtheats/presentation/widgets/textfield_container.dart';
-import 'package:healtheats/presentation/widgets/wide_button.dart';
+import 'package:healtheats/presentation/widgets/button/wide_button.dart';
 import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
@@ -33,9 +33,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: authProvider.isLoading
           ? const Center(
-              child: CircularProgressIndicator(
-                color: AppColors.primaryColor,
-              ),
+              child: CircularProgressIndicator(),
             )
           : SingleChildScrollView(
               child: Container(
@@ -116,8 +114,8 @@ class _LoginPageState extends State<LoginPage> {
                             onTap: () async {
                               if (formKey.currentState!.validate()) {
                                 await authProvider.login(
-                                  email.text.trim(),
-                                  password.text.trim(),
+                                  email.text,
+                                  password.text,
                                 );
                               }
                             },
@@ -130,12 +128,15 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-      bottomNavigationBar: FixedBottomText(
-        onTap: () {
-          Navigator.pushNamed(context, AppRoutes.daftar);
-        },
-        text: "Belum punya akun? ",
-        textButton: "Daftar",
+      bottomNavigationBar: Visibility(
+        visible: !authProvider.isLoading,
+        child: FixedBottomText(
+          onTap: () {
+            Navigator.pushNamed(context, AppRoutes.daftar);
+          },
+          text: "Belum punya akun? ",
+          textButton: "Daftar",
+        ),
       ),
     );
   }
