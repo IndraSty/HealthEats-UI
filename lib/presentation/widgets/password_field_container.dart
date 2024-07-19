@@ -81,7 +81,9 @@ class PasswordFieldContainer extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      onChanged: field.didChange,
+                      onChanged: (value) {
+                        field.didChange(value);
+                      },
                     ),
                     if (field.hasError)
                       Padding(
