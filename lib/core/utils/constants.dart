@@ -11,6 +11,7 @@ class AppColors {
   static const miniBox = Color(0xff6EDAC1);
   static const greyBg = Color(0xffF1F1F1);
   static const white = Color(0xffFFFFFF);
+  static const shimmer = Color(0xffECECEC);
 }
 
 class AppScreenSize {
@@ -25,6 +26,11 @@ class AppTextStyles {
     fontSize: 10,
     fontWeight: FontWeight.w400,
     color: AppColors.textGray,
+  );
+  static final TextStyle poppins_10_medium_primary = GoogleFonts.poppins(
+    fontSize: 10,
+    fontWeight: FontWeight.w500,
+    color: AppColors.primaryColor,
   );
 
   static final TextStyle poppins_14_bold = GoogleFonts.poppins(
@@ -47,6 +53,11 @@ class AppTextStyles {
     fontWeight: FontWeight.w500,
     color: AppColors.textGray,
   );
+  static final TextStyle poppins_14_semibold_white = GoogleFonts.poppins(
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    color: AppColors.white,
+  );
 
   static final TextStyle poppins_14_bold_primary = GoogleFonts.poppins(
     fontSize: 14,
@@ -59,25 +70,81 @@ class AppTextStyles {
     fontWeight: FontWeight.w600,
     color: AppColors.fontColor,
   );
+  static final TextStyle poppins_16_semibold_white = GoogleFonts.poppins(
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    color: AppColors.white,
+  );
+  static final TextStyle poppins_16_bold_white = GoogleFonts.poppins(
+    fontSize: 16,
+    fontWeight: FontWeight.w700,
+    color: Colors.white,
+  );
 
   static final TextStyle poppins_12_medium_primary = GoogleFonts.poppins(
     fontSize: 12,
     fontWeight: FontWeight.w500,
     color: AppColors.primaryColor,
   );
+
+  static final TextStyle poppins_12_medium_white = GoogleFonts.poppins(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    color: AppColors.white,
+  );
+  static final TextStyle poppins_12_medium_danger = GoogleFonts.poppins(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    color: AppColors.dangerColor,
+  );
+
   static final TextStyle poppins_12_reguler = GoogleFonts.poppins(
     fontSize: 12,
     fontWeight: FontWeight.w400,
   );
+  static final TextStyle poppins_12_medium = GoogleFonts.poppins(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+  );
+
   static final TextStyle poppins_12_reguler_gray = GoogleFonts.poppins(
     fontSize: 12,
     fontWeight: FontWeight.w400,
     color: AppColors.textGray,
   );
 
+  static final TextStyle poppins_12_medium_gray = GoogleFonts.poppins(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    color: AppColors.textGray,
+  );
+
+  static final TextStyle poppins_12_semibold_gray = GoogleFonts.poppins(
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
+    color: AppColors.textGray,
+  );
+
+  static final TextStyle poppins_12_semibold_white = GoogleFonts.poppins(
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
+    color: AppColors.white,
+  );
+
   static final TextStyle poppins_18_bold = GoogleFonts.poppins(
     fontSize: 18,
     fontWeight: FontWeight.w600,
+  );
+
+  static final TextStyle poppins_18_semibold = GoogleFonts.poppins(
+    fontSize: 18.0,
+    fontWeight: FontWeight.w600,
+    color: AppColors.fontColor,
+  );
+  static final TextStyle poppins_18_semibold_white = GoogleFonts.poppins(
+    fontSize: 18.0,
+    fontWeight: FontWeight.w600,
+    color: AppColors.white,
   );
 }
 
@@ -108,6 +175,61 @@ List<Map<String, dynamic>> questions = [
       {'text': 'Sedang (3-5 kali)', 'score': 10},
       {'text': 'Jarang (1-2 kali)', 'score': 5},
     ],
+  },
+];
+
+final inputQuestions = [
+  {
+    'question': 'Apa Jenis Kelamin Anda?',
+    'answers': ['Pria', 'Wanita'],
+    'values': [1, 0]
+  },
+  {
+    'question': 'Berapa Usia Anda?',
+    'inputType': 'textfield',
+    'answer': [],
+  },
+  {
+    'question': 'Apakah Anda Pernah Menikah?',
+    'answers': ['Ya', 'Tidak', 'Belum Pernah Menikah'],
+    'values': [2, 1, 0]
+  },
+  {
+    'question': 'Apa Jenis Pekerjaan Anda?',
+    'answers': [
+      'Paruh Waktu',
+      'Penuh Waktu',
+      'Pekerja Lepas',
+      'Pensiunan',
+      'Lainnya'
+    ],
+    'values': [1, 2, 3, 4, 5]
+  },
+  {
+    'question': 'Apa Tipe Tempat Tinggal Anda?',
+    'answers': ['Perkotaan', 'Pedesaan', 'Lainnya'],
+    'values': [1, 2, 3]
+  },
+  {
+    'question': 'Berapa Indeks Massa Tubuh (BMI) Anda?',
+    'answer': [],
+    'inputType': 'textfield',
+  },
+  {
+    'question': 'Apa Status Merokok Anda?',
+    'answers': [
+      'Tidak Pernah Merokok',
+      'Mantan Perokok',
+      'Perokok Sosial',
+      'Perokok Aktif',
+      'Perokok Berat'
+    ],
+    'values': [1, 2, 3, 4, 5]
+  },
+  {
+    'question': 'Seberapa Aktif Anda Secara Fisik?',
+    'answers': ['Tidak Aktif', 'Sedang', 'Aktif'],
+    'values': [0, 1, 2]
   },
 ];
 
