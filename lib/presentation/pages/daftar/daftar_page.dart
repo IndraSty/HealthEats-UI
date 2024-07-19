@@ -5,7 +5,7 @@ import 'package:healtheats/presentation/providers/auth_provider.dart';
 import 'package:healtheats/presentation/widgets/fixed_bottom_text.dart';
 import 'package:healtheats/presentation/widgets/password_field_container.dart';
 import 'package:healtheats/presentation/widgets/textfield_container.dart';
-import 'package:healtheats/presentation/widgets/wide_button.dart';
+import 'package:healtheats/presentation/widgets/button/wide_button.dart';
 import 'package:provider/provider.dart';
 
 class DaftarPage extends StatefulWidget {
