@@ -1,6 +1,5 @@
-import 'package:healtheats/domain/entities/deteksi_entity.dart';
+import 'package:healtheats/data/models/deteksi_model.dart';
 
 abstract class DeteksiRepository {
-  Future<void> create(DeteksiEntity deteksi);
-  Future<void> get(String id);
+  Future<DeteksiModel> get(List answer);
 }
